@@ -33,7 +33,7 @@ for j in range(len(f)):
         y[j][i]=a
     
 #crea 10 subplots in maniera da essere selezionabili attraverso degli indici i e j
-fig, axs=plt.subplots(5,2, constrained_layout=True)
+fig, axs=plt.subplots(5,2)
 fig.subplots_adjust(hspace=0)
 '''
 questo era una versione precedente, equivalente al for di sotto
@@ -56,8 +56,8 @@ for i in range(5):
     for j in range(2):
         plt.sca(axs[i, j])
         plt.plot((np.linspace(0, 4/f[2*i+j],1000)), y[2*i+j])
-        plt.xlim(-0.1/f[2*i+j], 4/f[2*i+j]+0.1/f[2*i+j])
         plt.xticks(np.arange(0,5/f[2*i+j], 1/f[2*i+j]), [0,1,2,3,4])
+        plt.xlim(-0.1/f[2*i+j], 4/f[2*i+j]+0.1/f[2*i+j])
 for i in range(5):
     for j in range(2):
         if(i!=4):
