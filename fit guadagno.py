@@ -9,6 +9,18 @@ Aa=va/vin
 
 Ab=vb/vin
 
-plt.plot(f, Aa, linestyle='', marker='.')
+plt.errorbar(f, Aa,[0.5,0.3,0.1,0.05,0.02,0.01,0.001,0.0007,0.0003],linestyle='', marker='.', color='red')
 plt.loglog()
+
+ff=np.logspace(0, 6, 1000)
+
+C=10**-7
+R=68900
+ft=1/(2*np.pi*R*C)
+wt=2*np.pi*ft
+
+Af=1/np.sqrt(1+(ff/ft)**2)
+
+plt.plot(ff,Af, color='blue')
+
 plt.show()
