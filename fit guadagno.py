@@ -3,6 +3,10 @@ import matplotlib
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
+##FIT GUADAGNO IN FUNZIONE DELLA FREQUENZA, IN CORSO
+#manca la propagazione degli errori sul guadagno(ci sono degli errori fittizzi per vedere l'approssimazione al modello)
+# e tutta la parte di fit effettivo
+
 f, vin, va, vb=np.loadtxt('dati guadagno.txt', unpack=True)
 
 Aa=va/vin
