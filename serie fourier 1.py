@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+##SIMULAZIONI ONDE QUADRA E TRIANGOLARE, COMPLETO
+
+
 ##onda quadra
 
 #crea un array da 1 a 10000 ogni due numeri, quindi partendo da 1 fa tutti i dispari
@@ -61,3 +64,5 @@ plt.figure(1)
 plt.plot(x,y,linewidth=0.5, color='red')
 #plt.plot(x,yy,linewidth=0.5,linestyle='--', color='green' )
 plt.show()
+
+
