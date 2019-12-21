@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 import plotly.offline as ply
 from scipy.optimize import curve_fit
 
+##APPROSSIMAZIONE DATI CON LA SIMULAZIONE DI PINNA DI SQUALO, NON COMPLETO
+# si dovrebbero calcolare gli errori sulla frequenza di taglio e sui dati( presi da arduino)
+
 t1, v1=np.loadtxt('pinnat10.txt', unpack=True)
 t2, v2=np.loadtxt('pinnat20.txt', unpack=True)
 t3, v3=np.loadtxt('pinnat50.txt', unpack=True)
@@ -53,22 +56,4 @@ for i in range(3):
         plt.xlim(-0.1/f[2*i+j], 5/f[2*i+j]+0.1/f[2*i+j])
 
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
