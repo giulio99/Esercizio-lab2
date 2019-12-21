@@ -3,6 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import plotly.offline as ply
 
+##SIMULAZIONE PINNA DI SQUALO, COMPLETO
 
 #crea un array da 1 a 10000 con un numero si e uno no, quindi partendo da 1 tutti i dispari
 dispari=np.arange(1, 10000, 2)
@@ -12,7 +13,7 @@ w=2*np.pi*f
 
 #valori del condensatore e della resistenza, con il calcolo delle relative frequenze di taglio
 C=10**-7
-R=3280
+R=3300
 ft=1/(2*np.pi*R*C)
 wt=2*np.pi*ft
 
