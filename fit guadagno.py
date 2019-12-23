@@ -18,7 +18,7 @@ plt.loglog()
 
 ff=np.logspace(0, 6, 1000)
 
-C=10**-7
+C=2.2*10**-7
 R=68900
 ft=1/(2*np.pi*R*C)
 wt=2*np.pi*ft
