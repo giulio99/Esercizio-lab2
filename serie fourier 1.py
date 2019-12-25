@@ -58,11 +58,19 @@ y=np.array([])
 for i in range(len(x)):
     b=(bk*np.cos(w*dispari*x[i])).sum()
     y=np.append(y, b)
+    
+yy=np.array([])
+#creo un array dei tempi equispaziati da 0 a 11 (in modo da comprendere anche il 10) di un fattore f/2
+xx=np.arange(0,11,(1/f)/2)
+for i in xx:
+    if(i%(1/f)==0.0):
+        yy=np.append(yy, 0.5)
+    else:
+        yy=np.append(yy, -0.5)
 
-#plot, non sono riuscito a creare una triangolare artificiale, provateci plz
 plt.figure(1)
 plt.plot(x,y,linewidth=0.5, color='red')
-#plt.plot(x,yy,linewidth=0.5,linestyle='--', color='green' )
+plt.plot(xx,yy,linewidth=0.5,linestyle='--', color='green' )
 plt.show()
 
 
