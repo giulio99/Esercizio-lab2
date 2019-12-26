@@ -5,15 +5,15 @@ import plotly.offline as ply
 
 
 dispari=np.arange(1, 10000, 2)
-f=np.array([ 50, 70, 100, 300, 500, 1000,3000, 5000,10000, 20000])
+f=np.array([ 5, 20, 50, 100, 300, 500,1000, 3000,5000, 10000])
 w=2*np.pi*f
 
 Ci=10**-7
-Ri=3280
+Ri=32800
 fti=1/(2*np.pi*Ri*Ci)
 wti=2*np.pi*fti
 
-Cd=0.22*10**-7
+Cd=10**-7
 Rd=67.5
 ftd=1/(2*np.pi*Rd*Cd)
 wtd=2*np.pi*ftd
