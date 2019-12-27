@@ -56,13 +56,15 @@ axs[4][1].plot((np.linspace(0, 4/f[9],1000)), y[9])
 for i in range(5):
     for j in range(2):
         plt.sca(axs[i, j])
-        plt.plot((np.linspace(0, 4/f[2*i+j],1000)), y[2*i+j])
+        plt.plot((np.linspace(0, 4/f[2*i+j],1000)), y[2*i+j], label='f=%d'%(f[2*i+j]))
         plt.xticks(np.arange(0,5/f[2*i+j], 1/f[2*i+j]), [0,1,2,3,4])
         plt.xlim(-0.1/f[2*i+j], 4/f[2*i+j]+0.1/f[2*i+j])
+        plt.legend(loc = 'right')
 for i in range(5):
     for j in range(2):
         if(i!=4):
             plt.setp(axs[i][j].get_xticklabels(), visible=False)
+
 
 plt.show()
 
