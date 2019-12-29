@@ -10,13 +10,15 @@ from scipy.optimize import curve_fit
 f, vin, dvin, va, dva, vb, dvb=np.loadtxt('dati guadagno.txt', unpack=True)
 
 Aa=va/vin
+dAa= np.sqrt(((1/vin)*2*dva)**2+((va/vin**2)*2*dvin)**2)
 
 Ab=vb/vin
-
-plt.errorbar(f, Aa,[0.5,0.3,0.1,0.05,0.02,0.01,0.001,0.0007,0.0003],linestyle='', marker='.', color='red')
+plt.errorbar(f, Aa,dAa,linestyle='', marker='.', color='red')
+#plt.errorbar(f, Aa,[0.5,0.3,0.1,0.05,0.02,0.01,0.001,0.0007,0.0003],linestyle='', marker='.', color='red')
 plt.loglog()
 
-ff=np.logspace(0, 6, 1000)
+ff=np.logspace(0, 6, 100)
+ww=2*np.pi*ff
 
 C=2.2*10**-7
 R=68900
