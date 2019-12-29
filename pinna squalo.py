@@ -59,6 +59,7 @@ for i in range(5):
         plt.plot((np.linspace(0, 4/f[2*i+j],1000)), y[2*i+j], label='f=%d'%(f[2*i+j]))
         plt.xticks(np.arange(0,5/f[2*i+j], 1/f[2*i+j]), [0,1,2,3,4])
         plt.xlim(-0.1/f[2*i+j], 4/f[2*i+j]+0.1/f[2*i+j])
+        pylab.xlabel('Time [T]')
         plt.legend(loc = 'right')
 for i in range(5):
     for j in range(2):
@@ -66,7 +67,18 @@ for i in range(5):
             plt.setp(axs[i][j].get_xticklabels(), visible=False)
 
 
+
+# add a big axis, hide frame
+fig.add_subplot(111, frameon=False)
+# hide tick and tick label of the big axis
+plt.tick_params(labelcolor='none', top=False, bottom=False, left=False, right=False)
+#plt.xlabel("common X")
+plt.ylabel("Simulated Signal [arb.un.]")
+
+
 plt.show()
+
+
 
 
 
