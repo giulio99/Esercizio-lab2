@@ -4,35 +4,32 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 ##FIT GUADAGNO IN FUNZIONE DELLA FREQUENZA, IN CORSO
-#manca la propagazione degli errori sul guadagno(ci sono degli errori fittizzi per vedere l'approssimazione al modello)
-# e tutta la parte di fit effettivo
 
 f, vin, dvin, va, dva, vb, dvb=np.loadtxt('dati guadagno.txt', unpack=True)
 
 Aa=va/vin
 dAa= np.sqrt(((1/vin)*2*dva)**2+((va/vin**2)*2*dvin)**2)
-
 Ab=vb/vin
 plt.errorbar(f, Aa,dAa,linestyle='', marker='.', color='red')
-#plt.errorbar(f, Aa,[0.5,0.3,0.1,0.05,0.02,0.01,0.001,0.0007,0.0003],linestyle='', marker='.', color='red')
 plt.loglog()
 
 ff=np.logspace(0, 6, 100)
 ww=2*np.pi*ff
 
+#valori di R e C utilizzati
 C=2.2*10**-7
 R=68900
 ft=1/(2*np.pi*R*C)
 wt=2*np.pi*ft
 
+ff=np.logspace(0, 6, 100)
+ww=2*np.pi*ff
+#Per le onde sinusoidali:
 Af=1/np.sqrt(1+(ff/ft)**2)
-
 plt.plot(ff,Af, color='blue')
 
 #simulazione per varie frequenze 
-#ATTENZIONE, fa un sacco di operazioni, non aumentare il numero di dispari, ff , y e x altrimenti ti si pianta il computer
 dispari=np.arange(1, 5000, 2)
-
 ck=2/(dispari*np.pi)
 y=np.empty((len(ff), 100))
 
