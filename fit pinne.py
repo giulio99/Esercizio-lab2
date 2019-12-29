@@ -29,7 +29,7 @@ t6=t6-t6[0]
 t=np.array([t1,t2,t3,t4,t5,t6])
 
 t=t/1000000
-dt=(t*63)/1000000
+dt=4/1000000
 
 #si è misurata v_ref= 4.86 +- 0.03. Da questo si ricava l'errore di calibrazione secondo la calibrazione alternativa e lo si somma in quadratura con l'errore di digitalizzazione
 dv1=np.sqrt(1 + (v1*(0.03/1023))**2)
@@ -95,7 +95,7 @@ for i in range(3):
 
         plt.sca(axs[i, j])
 
-        plt.errorbar(t[2*i+j], v[2*i+j], dv[2*i+j], dt[2*i+j], linestyle='', marker='.')
+        plt.errorbar(t[2*i+j], v[2*i+j], dv[2*i+j], dt, linestyle='', marker='.')
 
         plt.plot((np.linspace(0, 5/f[2*i+j],1000)), y[2*i+j])
 
