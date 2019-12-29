@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
-import plotly.offline as ply
+#import plotly.offline as ply
 
 
 dispari=np.arange(1, 10000, 2)
@@ -55,16 +55,15 @@ fig2.subplots_adjust(hspace=0)
 for i in range(5):
     for j in range(2):
         plt.sca(axs2[i, j])
-        plt.plot((np.linspace(0, 4/f[2*i+j],1000)), yd[2*i+j])
+        plt.plot((np.linspace(0, 4/f[2*i+j],1000)), yd[2*i+j],label='f=%d Hz'%(f[2*i+j]))
         plt.xticks(np.arange(0,5/f[2*i+j], 1/f[2*i+j]), [0,1,2,3,4])
         plt.xlim(-0.1/f[2*i+j], 4/f[2*i+j]+0.1/f[2*i+j])
-        
+        plt.legend(loc = 'upper right')
+        pylab.xlabel('Time [T]')
 for i in range(5):
     for j in range(2):
         if(i!=4):
             plt.setp(axs2[i][j].get_xticklabels(), visible=False)
+fig2.text(0.04, 0.5, 'Simulated Signal [arb.un.]', va='center', rotation='vertical')
 
 plt.show()
-
-
-
