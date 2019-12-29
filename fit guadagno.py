@@ -3,7 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
-##FIT GUADAGNO IN FUNZIONE DELLA FREQUENZA, IN CORSO
+##FIT GUADAGNO IN FUNZIONE DELLA FREQUENZA
 
 f, vin, dvin, va, dva, vb, dvb=np.loadtxt('dati guadagno.txt', unpack=True)
 
