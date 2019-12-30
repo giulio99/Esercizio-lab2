@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
+import pylab
 from scipy.optimize import curve_fit
 
 plt.loglog()
@@ -15,8 +16,8 @@ wt=2*np.pi*ft
 
 Af=1/np.sqrt(1+(ft/ff)**2)
 
-plt.plot(ff,Af, color='blue')
-
+plt.plot(ff,Af, color='gray', ls='--', label='sinosoidale')
+plt.legend(loc = 'upper right')
 dispari=np.arange(1, 5000, 2)
 
 ck=2/(dispari*np.pi)
@@ -35,5 +36,9 @@ Ampl=np.empty(len(ff))
 for j in range(len(ff)):
     Ampl[j]=np.abs(max(y[j])-min(y[j]))
 
-plt.plot(ff, Ampl, color='green')
+plt.plot(ff, Ampl, color='green', label='onda quadra')
+plt.legend(loc = 'upper right')
+pylab.xlabel('$f$ [Hz]')
+pylab.ylabel('$A(f)$')
+
 plt.show()
